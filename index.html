@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist Name — Portfolio & Available Works</title>
+<meta name="description" content="A portfolio and sales catalogue of original artwork.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <p class="eyebrow">Portfolio &amp; Available Works</p>
+    <h1 class="site-title">Artist Name</h1>
+    <p class="site-tagline">Paintings and studies of the everyday — floral, portrait, and landscape work, made in oil, watercolour, and charcoal.</p>
+  </header>
+
+  <!-- ===================== STICKY NAV / FILTER BAR ===================== -->
+  <nav class="control-bar" id="control-bar">
+    <div class="control-bar-inner">
+      <div class="jump-links" id="jump-links">
+        <!-- populated by script.js from categories list -->
+      </div>
+
+      <div class="filter-toggle" role="group" aria-label="Filter artworks">
+        <button class="filter-btn is-active" data-filter="all" type="button">All Works</button>
+        <button class="filter-btn" data-filter="available" type="button">For Sale</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== GALLERY (populated by JS) ===================== -->
+  <main id="gallery">
+    <!-- category sections are built automatically from artworks.js -->
+  </main>
+
+  <!-- ===================== EMPTY STATE (shown by JS if a filtered section has nothing) ===================== -->
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-caption">
+        <p class="lb-title" id="lb-title"></p>
+        <p class="lb-meta" id="lb-meta"></p>
+        <p class="lb-status" id="lb-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <p class="footer-note">Interested in a piece, or in commissioning new work?</p>
+    <a class="contact-link" href="mailto:youremail@example.com?subject=Inquiry%20about%20your%20artwork">Get in touch &rarr;</a>
+    <p class="footer-fine">Prices shown are in South African Rand and exclude shipping. Availability updates regularly — please enquire to confirm before travelling to view a piece in person.</p>
+  </footer>
+
+  <script src="artworks.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

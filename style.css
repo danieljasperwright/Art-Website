@@ -1,0 +1,420 @@
+/* ============================================================
+   DESIGN TOKENS
+   Change these to re-theme the whole site from one place.
+   ============================================================ */
+:root {
+  --wall:        #F1EFE9;   /* gallery wall background */
+  --wall-deep:   #E8E4DC;   /* section stripe / card background */
+  --ink:         #201E1B;   /* primary text */
+  --ink-soft:    #6E675D;   /* secondary text / captions */
+  --hairline:    #D3CDC0;   /* dividers, borders */
+  --brass:       #9C7A2E;   /* "available / for sale" accent */
+  --brass-wash:  #F3E9D2;   /* available tag background */
+  --archived:    #8B8478;   /* "sold" accent */
+  --archived-wash: #E4E1D9;/* sold tag background */
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  --max-width: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+}
+
+.site-tagline {
+  max-width: 42ch;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   STICKY CONTROL BAR (nav + filter)
+   ============================================================ */
+.control-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(241, 239, 233, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.control-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jump-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.jump-links a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.jump-links a:hover,
+.jump-links a:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--brass);
+}
+
+.filter-toggle {
+  display: inline-flex;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 3px;
+  background: var(--wall-deep);
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn.is-active {
+  background: var(--ink);
+  color: var(--wall);
+}
+
+.filter-btn:focus-visible,
+.jump-links a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   GALLERY SECTIONS
+   ============================================================ */
+.category-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1rem;
+}
+
+.category-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.9rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.category-heading .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.category-count {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.25rem 1.75rem;
+}
+
+.empty-note {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 0.5rem 0 2rem;
+}
+
+/* ============================================================
+   ARTWORK CARD — designed like a museum wall label
+   ============================================================ */
+.card {
+  cursor: pointer;
+  animation: rise 0.5s ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-frame {
+  background: #fff;
+  padding: 0.6rem;
+  border: 1px solid var(--hairline);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover .card-frame,
+.card:focus-visible .card-frame {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -12px rgba(32, 30, 27, 0.25);
+}
+
+.card-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--wall-deep);
+}
+
+.label {
+  padding-top: 0.85rem;
+}
+
+.label-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+}
+
+.label-meta {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+}
+
+.tag.available {
+  background: var(--brass-wash);
+  color: var(--brass);
+}
+
+.tag.sold {
+  background: var(--archived-wash);
+  color: var(--archived);
+}
+
+.tag.not-for-sale {
+  background: var(--archived-wash);
+  color: var(--ink-soft);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(32, 30, 27, 0.94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 2rem;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightbox-content img {
+  max-height: 72vh;
+  width: auto;
+  object-fit: contain;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.lightbox-caption {
+  text-align: center;
+  color: var(--wall);
+}
+
+.lb-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem;
+}
+
+.lb-meta {
+  font-size: 0.85rem;
+  color: #C9C3B8;
+  margin: 0 0 0.4rem;
+}
+
+.lb-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--brass);
+  margin: 0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: var(--wall);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+  margin-top: 3rem;
+}
+
+.footer-note {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.contact-link {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--brass);
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 2px;
+}
+
+.contact-link:hover { color: var(--ink); border-color: var(--ink); }
+
+.footer-fine {
+  max-width: 46ch;
+  margin: 1.75rem auto 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .control-bar-inner { justify-content: flex-start; }
+  .jump-links { gap: 1rem; overflow-x: auto; padding-bottom: 2px; }
+  .category-heading h2 { font-size: 1.5rem; }
+}
