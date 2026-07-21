@@ -174,4 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   render();
+
+  // ---------- Auto-fill current year in footer copyright ----------
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
