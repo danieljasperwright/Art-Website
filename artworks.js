@@ -22,6 +22,9 @@
   - year:     e.g. "2024"
   - price:    write it as a string, e.g. "R1200" or "$450"
               (only shown if status is "available")
+              LEAVE THIS AS AN EMPTY STRING —  price: ""  — if you haven't
+              decided on a price yet. The site will show the "For Sale" tag
+              with no price next to it, rather than showing "R0" or similar.
   - status:   one of exactly three options, in quotes:
                 "available"    -> shows the price, appears in "For Sale" filter
                 "sold"          -> shows a "Sold" tag, hidden from "For Sale" filter
