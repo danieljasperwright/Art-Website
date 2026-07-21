@@ -111,7 +111,7 @@ const artworks = [
     price: "R2100",
     status: "sold",
     image: "images/placeholder-6.jpg"
-  }
+  },
     {
     id: 7,
     title: "Lion",
