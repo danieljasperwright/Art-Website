@@ -121,7 +121,7 @@ const artworks = [
     year: "",
     price: "",
     status: "not-for-sale",
-    image: "lion-reduced-size.jpg"
+    image: "images/lion-reduced-size.jpg"
   },
       {
     id: 8,
@@ -132,6 +132,6 @@ const artworks = [
     year: "",
     price: "",
     status: "not-for-sale",
-    image: "ostrich-reduced-size.jpg"
+    image: "images/ostrich-reduced-size.jpg"
   },
 ];
