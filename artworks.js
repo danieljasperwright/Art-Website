@@ -112,4 +112,26 @@ const artworks = [
     status: "sold",
     image: "images/placeholder-6.jpg"
   }
+    {
+    id: 7,
+    title: "Lion",
+    category: "Floral",
+    medium: "Oil on canvas",
+    size: "60 x 40 cm",
+    year: "",
+    price: "",
+    status: "not-for-sale",
+    image: "lion-reduced-size.jpg"
+  },
+      {
+    id: 8,
+    title: "Ostrich",
+    category: "Floral",
+    medium: "Oil on canvas",
+    size: "60 x 80 cm",
+    year: "",
+    price: "",
+    status: "not-for-sale",
+    image: "ostrich-reduced-size.jpg"
+  },
 ];
