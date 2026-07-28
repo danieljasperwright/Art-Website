@@ -93,7 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', `View ${a.title}`);
 
-    const statusTag = statusTagHTML(a);
+    // Only show price when viewing the "For Sale" filter — under "All Works"
+    // nothing here is shown, and since "For Sale" only ever displays available
+    // pieces anyway, the status tag becomes redundant and is skipped entirely.
+    const labelRow = currentFilter === 'available'
+      ? (a.price ? `<div class="label-row"><span class="price">${a.price}</span></div>` : '')
+      : '';
 
     card.innerHTML = `
       <div class="card-frame">
@@ -102,10 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="label">
         <p class="label-title">${a.title}</p>
         <p class="label-meta">${a.medium} &middot; ${a.size} &middot; ${a.year}</p>
-        <div class="label-row">
-          ${statusTag}
-          ${a.status === 'available' ? `<span class="price">${a.price}</span>` : ''}
-        </div>
+        ${labelRow}
       </div>
     `;
 
@@ -118,12 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     return card;
-  }
-
-  function statusTagHTML(a) {
-    if (a.status === 'available') return `<span class="tag available">For Sale</span>`;
-    if (a.status === 'sold') return `<span class="tag sold">Sold</span>`;
-    return `<span class="tag not-for-sale">Not for Sale</span>`;
   }
 
   // ---------- Filter toggle ----------
@@ -143,14 +139,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const lbMeta = document.getElementById('lb-meta');
   const lbStatus = document.getElementById('lb-status');
   const lbClose = document.getElementById('lightbox-close');
+  const lbPrev = document.getElementById('lightbox-prev');
+  const lbNext = document.getElementById('lightbox-next');
 
-  function openLightbox(a) {
+  let currentIndex = -1;
+
+  // Builds the full list of artworks in the exact order they appear on the
+  // page (category by category, top to bottom), respecting whichever filter
+  // is currently active. This is what "next/prev" steps through.
+  function getVisibleArtworksInOrder() {
+    let result = [];
+    categories.forEach(cat => {
+      let items = artworks.filter(a => a.category === cat);
+      if (currentFilter === 'available') {
+        items = items.filter(a => a.status === 'available');
+      }
+      result = result.concat(items);
+    });
+    return result;
+  }
+
+  function showAtIndex(index) {
+    const list = getVisibleArtworksInOrder();
+    if (list.length === 0) return;
+
+    // wrap around at either end, so next/prev always has something to show
+    currentIndex = (index + list.length) % list.length;
+    const a = list[currentIndex];
+
     lbImg.src = a.image;
     lbImg.alt = a.title;
     lbTitle.textContent = a.title;
     lbMeta.textContent = `${a.medium} · ${a.size} · ${a.year}`;
-    lbStatus.textContent = a.status === 'available' ? `For Sale — ${a.price}` :
-                            a.status === 'sold' ? 'Sold' : 'Not for Sale';
+    lbStatus.textContent = (currentFilter === 'available' && a.price) ? a.price : '';
+  }
+
+  function openLightbox(a) {
+    const list = getVisibleArtworksInOrder();
+    const index = list.findIndex(item => item.id === a.id);
+    showAtIndex(index === -1 ? 0 : index);
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     lbClose.focus();
@@ -164,11 +191,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showAtIndex(currentIndex - 1); });
+  lbNext.addEventListener('click', (e) => { e.stopPropagation(); showAtIndex(currentIndex + 1); });
+
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showAtIndex(currentIndex - 1);
+    if (e.key === 'ArrowRight') showAtIndex(currentIndex + 1);
   });
 
   // ---------- Helper ----------
