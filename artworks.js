@@ -39,9 +39,12 @@
 */
 
 const categories = [
-  "Floral",
   "Portraits",
-  "Landscapes"
+  "Female Figure",
+  "Male Figure",
+  "Floral",
+  "Landscapes",
+  "Widlife"
   // Add more subject-matter categories here as needed, e.g. "Still Life", "Abstract"
 ];
 
@@ -115,7 +118,7 @@ const artworks = [
     {
     id: 7,
     title: "Lion",
-    category: "Floral",
+    category: "Wildlife",
     medium: "Oil on canvas",
     size: "60 x 40 cm",
     year: "",
@@ -126,12 +129,12 @@ const artworks = [
       {
     id: 8,
     title: "Ostrich",
-    category: "Floral",
+    category: "Wildlife",
     medium: "Oil on canvas",
     size: "60 x 80 cm",
     year: "",
     price: "",
-    status: "not-for-sale",
+    status: "Sold",
     image: "images/ostrich-reduced-size.jpg"
   },
 ];
