@@ -10,17 +10,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const gallery = document.getElementById('gallery');
-  const jumpLinks = document.getElementById('jump-links');
   const filterButtons = document.querySelectorAll('.filter-btn');
 
   let currentFilter = 'all'; // 'all' or 'available'
 
-  // ---------- Build jump links from categories ----------
-  categories.forEach(cat => {
+  // ---------- Build jump links from categories, split into two rows ----------
+  const jumpRow1 = document.getElementById('jump-row-1');
+  const jumpRow2 = document.getElementById('jump-row-2');
+  const splitPoint = Math.ceil(categories.length / 2);
+
+  categories.forEach((cat, index) => {
     const a = document.createElement('a');
     a.href = `#cat-${slugify(cat)}`;
     a.textContent = cat;
-    jumpLinks.appendChild(a);
+    (index < splitPoint ? jumpRow1 : jumpRow2).appendChild(a);
   });
 
   // ---------- Build one section per category ----------

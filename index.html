@@ -29,8 +29,13 @@
   <!-- ===================== STICKY NAV / FILTER BAR ===================== -->
   <nav class="control-bar" id="control-bar">
     <div class="control-bar-inner">
-      <div class="jump-links" id="jump-links">
-        <!-- populated by script.js from categories list -->
+      <div class="jump-links">
+        <div class="jump-row" id="jump-row-1">
+          <!-- populated by script.js: first half of the categories list -->
+        </div>
+        <div class="jump-row" id="jump-row-2">
+          <!-- populated by script.js: second half of the categories list -->
+        </div>
       </div>
 
       <div class="filter-toggle" role="group" aria-label="Filter artworks">
@@ -39,6 +44,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- ===================== GALLERY (populated by JS) ===================== -->
   <main id="gallery">
