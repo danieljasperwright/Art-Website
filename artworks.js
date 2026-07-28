@@ -44,7 +44,7 @@ const categories = [
   "Male Figure",
   "Floral",
   "Landscapes",
-  "Widlife"
+  "Wildlife"
   // Add more subject-matter categories here as needed, e.g. "Still Life", "Abstract"
 ];
 
