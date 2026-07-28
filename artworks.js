@@ -57,7 +57,7 @@ const artworks = [
     size: "40 x 50 cm",
     year: "",
     price: "R1800",
-    status: "Sold",
+    status: "sold",
     image: "images/ground-squirrel-reduced-size.jpg"
   },
   {
@@ -68,7 +68,7 @@ const artworks = [
     size: "100 x 100 cm",
     year: "2024",
     price: "",
-    status: "Not for sale",
+    status: "not-for-sale",
     image: "images/winter-vlei-reduced-size.jpg"
   },
   {
@@ -134,7 +134,7 @@ const artworks = [
     size: "60 x 80 cm",
     year: "",
     price: "",
-    status: "Sold",
+    status: "sold",
     image: "images/ostrich-reduced-size.jpg"
   },
        {
@@ -145,7 +145,7 @@ const artworks = [
     size: "45 x 45 cm",
     year: "",
     price: "",
-    status: "Sold",
+    status: "sold",
     image: "images/the-quiet-between-reduced-size.jpg"
   },
          {
@@ -156,7 +156,7 @@ const artworks = [
     size: "60 x 80 cm",
     year: "",
     price: "",
-    status: "Sold",
+    status: "sold",
     image: "images/thread-and-thorn-1-reduced-size.jpg"
   },
        {
@@ -167,7 +167,7 @@ const artworks = [
     size: "60 x 80 cm",
     year: "",
     price: "",
-    status: "Sold",
+    status: "sold",
     image: "images/thread-and-thorn-2-reduced-size.jpg"
   },
          {
@@ -178,7 +178,7 @@ const artworks = [
     size: "50 x 60 cm",
     year: "2024",
     price: "R4500",
-    status: "Abailable",
+    status: "available",
     image: "images/ember-and-ash-reduced size.jpg"
   },
 ];
