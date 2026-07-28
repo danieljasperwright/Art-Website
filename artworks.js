@@ -170,4 +170,15 @@ const artworks = [
     status: "Sold",
     image: "images/thread-and-thorn-2-reduced-size.jpg"
   },
+         {
+    id: 12,
+    title: "Ember and Ashes",
+    category: "Floral",
+    medium: "Oil on canvas",
+    size: "50 x 60 cm",
+    year: "2024",
+    price: "R4500",
+    status: "Abailable",
+    image: "images/ember-and-ash-reduced size.jpg"
+  },
 ];
