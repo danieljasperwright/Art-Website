@@ -73,47 +73,47 @@ const artworks = [
   },
   {
     id: 3,
-    title: "Grandmother's Hands",
-    category: "Portraits",
-    medium: "Charcoal on paper",
-    size: "30 x 40 cm",
-    year: "2024",
-    price: "R950",
+    title: "Autumn at the Millhouse",
+    category: "Landscapes",
+    medium: "Oil on canvas",
+    size: "47,5 x 60 cm",
+    year: "2022",
+    price: "R4500",
     status: "available",
-    image: "images/placeholder-3.jpg"
+    image: "images/autumn-at-the-millhouse-reduced-size.jpg"
   },
   {
     id: 4,
-    title: "Self Portrait, Late Light",
-    category: "Portraits",
-    medium: "Oil on board",
-    size: "35 x 35 cm",
+    title: "Dance of the Sky",
+    category: "Landscapes",
+    medium: "Oil on canvas",
+    size: "",
     year: "2022",
-    price: "",
-    status: "not-for-sale",
-    image: "images/placeholder-4.jpg"
+    price: "R3500",
+    status: "available",
+    image: "images/dance-of-the-sky-reduced-size.jpg"
   },
   {
     id: 5,
-    title: "Valley Before Rain",
+    title: "The Path Home",
     category: "Landscapes",
-    medium: "Acrylic on canvas",
-    size: "60 x 80 cm",
-    year: "2024",
-    price: "R2400",
+    medium: "Oil on canvas",
+    size: "",
+    year: "2022",
+    price: "R4000",
     status: "available",
-    image: "images/placeholder-5.jpg"
+    image: "images/the-path-home-reduced size.jpg"
   },
   {
     id: 6,
-    title: "Dune Line, Evening",
+    title: "Schloss Moritzburg",
     category: "Landscapes",
     medium: "Oil on canvas",
-    size: "50 x 70 cm",
-    year: "2023",
-    price: "R2100",
+    size: "80 x 60 cm",
+    year: "",
+    price: "",
     status: "sold",
-    image: "images/placeholder-6.jpg"
+    image: "images/schloss-moritzburg-reduced-size.jpg"
   },
     {
     id: 7,
@@ -136,5 +136,38 @@ const artworks = [
     price: "",
     status: "Sold",
     image: "images/ostrich-reduced-size.jpg"
+  },
+       {
+    id: 9,
+    title: "The Quiet Between",
+    category: "Portraits",
+    medium: "Oil on canvas",
+    size: "45 x 45 cm",
+    year: "",
+    price: "",
+    status: "Sold",
+    image: "images/the-quiet-between-reduced-size.jpg"
+  },
+         {
+    id: 10,
+    title: "Thread and Throrn 1",
+    category: "Floral",
+    medium: "Oil on fabric",
+    size: "60 x 80 cm",
+    year: "",
+    price: "",
+    status: "Sold",
+    image: "images/thread-and-thorn-1-reduced-size.jpg"
+  },
+       {
+    id: 11,
+    title: "Thread and Throrn 2",
+    category: "Floral",
+    medium: "Oil on fabric",
+    size: "60 x 80 cm",
+    year: "",
+    price: "",
+    status: "Sold",
+    image: "images/thread-and-thorn-2-reduced-size.jpg"
   },
 ];
