@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const emptyNote = document.createElement('p');
     emptyNote.className = 'empty-note';
-    emptyNote.textContent = 'No pieces currently for sale in this category — check back soon.';
+    emptyNote.textContent = 'No pieces currently for sale in this category.';
     emptyNote.style.display = 'none';
     section.appendChild(emptyNote);
 
