@@ -51,25 +51,25 @@ const categories = [
 const artworks = [
   {
     id: 1,
-    title: "Morning Peonies",
-    category: "Floral",
+    title: "Ground Squirrel",
+    category: "Wildlife",
     medium: "Oil on canvas",
     size: "40 x 50 cm",
-    year: "2024",
+    year: "",
     price: "R1800",
-    status: "available",
-    image: "images/placeholder-1.jpg"
+    status: "Sold",
+    image: "images/ground-squirrel-reduced-size.jpg"
   },
   {
     id: 2,
-    title: "Study in Rust",
-    category: "Floral",
-    medium: "Watercolour",
-    size: "21 x 29 cm",
-    year: "2023",
-    price: "R650",
-    status: "sold",
-    image: "images/placeholder-2.jpg"
+    title: "Winter Vlei",
+    category: "Landscapes",
+    medium: "Acrylic on canvas",
+    size: "100 x 100 cm",
+    year: "2024",
+    price: "",
+    status: "Not for sale",
+    image: "images/winter-vlei-reduced-size.jpg"
   },
   {
     id: 3,
