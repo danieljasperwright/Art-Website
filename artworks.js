@@ -181,4 +181,15 @@ const artworks = [
     status: "available",
     image: "images/ember-and-ash-reduced size.jpg"
   },
+    {
+    id: 13,
+    title: "Coastal Aloe",
+    category: "Floral",
+    medium: "Oil on canvas",
+    size: "30 x 40 cm",
+    year: "",
+    price: "",
+    status: "not-for-sale",
+    image: "images/coastal-aloe-reduced-size.jpg"
+  },
 ];
