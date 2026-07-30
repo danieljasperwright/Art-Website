@@ -192,4 +192,15 @@ const artworks = [
     status: "not-for-sale",
     image: "images/coastal-aloe-reduced-size.jpg"
   },
+      {
+    id: 13,
+    title: "Camellia in Silk",
+    category: "Portrait",
+    medium: "Oil on canvas",
+    size: "50 x 60 cm",
+    year: "",
+    price: "",
+    status: "available",
+    image: "images/camellia-in-silk-reduced-size.jpg"
+  },
 ];
