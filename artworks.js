@@ -199,7 +199,7 @@ const artworks = [
     medium: "Oil on canvas",
     size: "50 x 60 cm",
     year: "",
-    price: "",
+    price: "R4800",
     status: "available",
     image: "images/camellia-in-silk-reduced-size.jpg"
   },
