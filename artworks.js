@@ -195,7 +195,7 @@ const artworks = [
       {
     id: 13,
     title: "Camellia in Silk",
-    category: "Portrait",
+    category: "Portraits",
     medium: "Oil on canvas",
     size: "50 x 60 cm",
     year: "",
