@@ -203,4 +203,15 @@ const artworks = [
     status: "available",
     image: "images/camellia-in-silk-reduced-size.jpg"
   },
+        {
+    id: 13,
+    title: "Her Plumage",
+    category: "Portraits",
+    medium: "Oil on canvas",
+    size: "45 x 45 cm",
+    year: "",
+    price: "",
+    status: "not-for-sale",
+    image: "images/her-plumage-reduced-size.jpg"
+  },
 ];
